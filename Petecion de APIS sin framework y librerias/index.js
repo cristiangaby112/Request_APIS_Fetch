@@ -20,9 +20,9 @@ const HTMLResponse = document.querySelector('#app');
 // });
 
 async function onRequest(){
-  let json = await fetch(`${API_URL}/users`)
+  let data = await fetch(`${API_URL}/users`)
   .then(response => response.json())
-  console.log(json)
+  console.log(data)
 }
 
 onRequest()
