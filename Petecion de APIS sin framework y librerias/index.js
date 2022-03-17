@@ -4,20 +4,28 @@ const HTMLResponse = document.querySelector('#app');
 // const tample = document.createDocumentFragment('ul');
 
 
-fetch(`${API_URL}/users`)
-.then(response => response.json())
-.then((users) => {
-//   users.forEach((user) => {
-//     let elem = document.createElement('li');
-//     elem.appendChild(document.createTextNode(`${user.name} ${user.email}`))
-//     tample.appendChild(elem);
-//   });
+// fetch(`${API_URL}/users`)
+// .then(response => response.json())
+// .then((users) => {
+// //   users.forEach((user) => {
+// //     let elem = document.createElement('li');
+// //     elem.appendChild(document.createTextNode(`${user.name} ${user.email}`))
+// //     tample.appendChild(elem);
+// //   });
 
-//   HTMLResponse.appendChild(tample);
-  const tample = users.map((user) => `<li>${user.name} ${user.email}</li>`);
-  HTMLResponse.innerHTML = `<ul>${tample}</ul>`;
-  console.log(users)
-});
+// //   HTMLResponse.appendChild(tample);
+//   const tample = users.map((user) => `<li>${user.name} ${user.email}</li>`);
+//   HTMLResponse.innerHTML = `<ul>${tample}</ul>`;
+//   console.log(users)
+// });
+
+async function onRequest(){
+  let json = await fetch(`${API_URL}/users`)
+  .then(response => response.json())
+  console.log(json)
+}
+
+onRequest()
 
 // const xhr = new XMLHttpRequest();
 
